@@ -43,7 +43,7 @@ const MainNavigation = () => {
 
 					{/* Desktop Menu */}
 					<ul className="hidden lg:flex lg:items-center lg:space-x-16">
-						{navLinks.map(({ label, href }) => (
+						{navLinks.map(({ label, href, Icon }) => (
 							<li
 								key={href}
 								onClick={closeMenu}
@@ -52,6 +52,7 @@ const MainNavigation = () => {
 								<NavLink
 									label={label}
 									href={href}
+									Icon={Icon}
 									isActive={isActive(href)}
 									aria-current={
 										isActive(href) ? "page" : undefined
@@ -76,11 +77,12 @@ const MainNavigation = () => {
 							isMenuOpen ? "block" : "hidden"
 						}  py-4 px-6 md:px-20 shadow-lg lg:hidden`}
 					>
-						{navLinks.map(({ label, href }) => (
+						{navLinks.map(({ label, href, Icon }) => (
 							<li key={href} onClick={closeMenu}>
 								<NavLink
 									label={label}
 									href={href}
+									Icon={Icon}
 									isActive={pathname == href}
 									aria-current={
 										isActive(href) ? "page" : undefined

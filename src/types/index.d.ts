@@ -1,6 +1,11 @@
+export type IconType = ForwardRefExoticComponent<
+	Omit<SVGProps<SVGSVGElement>, "ref">
+>;
+
 export type NavLink = {
 	label: string;
 	href: string;
+	Icon: IconType;
 };
 
 export type NavLinkProps = NavLink & {

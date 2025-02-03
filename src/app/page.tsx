@@ -27,10 +27,6 @@ export default function Home() {
 							href="/Pascal_Ramy_CV.pdf"
 							label="Resume"
 						/>
-						<ExternalLink
-							href="https://github.com/pascalramy00/portfolio-site"
-							label="Source Code"
-						/>
 					</div>
 					<h2 className="mb-4 2xl:text-xl">
 						Software Developer based in{" "}
@@ -42,11 +38,6 @@ export default function Home() {
 			</section>
 			<section className="min-h-screen py-20 flex flex-col lg:flex-row">
 				<div className="w-full lg:w-2/6 mr-4">
-					<h2 className="text-2xl font-semibold mb-2">
-						Want to work together?
-						<br />
-						Send me a message!
-					</h2>
 					<ContactForm />
 				</div>
 				<div className="w-full lg:w-1/2 px-4">

@@ -52,6 +52,15 @@ const ContactForm = () => {
 
 	return (
 		<div className="relative">
+			<h2 className="text-2xl font-semibold mb-2">
+				Want to work together?
+				<br />
+				Reach out.
+			</h2>
+			<div className="flex items-center justify-start">
+				<span className="inline-block w-2 h-2 mr-2 bg-green-500 rounded-full"></span>
+				<h3>available for work and projects</h3>
+			</div>
 			{status && (
 				<motion.div
 					className="absolute inset-0 bg-black bg-opacity-10 flex items-center justify-center"
