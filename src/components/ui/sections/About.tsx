@@ -1,12 +1,15 @@
 import CorneredRectangle from "../elements/CorneredRectangle";
 import Section from "@/components/layout/Section";
+import SectionTitle from "../elements/SectionTitle";
+import SectionContent from "../elements/SectionContent";
+import NavLink from "../elements/NavLink";
 
 const About = () => {
 	return (
 		<Section id="about" className="flex flex-col lg:flex-row z-20">
-			<div className="w-full lg:w-1/2 px-4">
+			<SectionContent>
 				<CorneredRectangle>
-					<h3 className="text-2xl font-semibold mb-2">About Me</h3>
+					<SectionTitle>About Me</SectionTitle>
 					{/* <p>I&apos;m a hard worker. </p> */}
 
 					<p>
@@ -28,8 +31,16 @@ const About = () => {
 						you’d like to discuss how my skills can contribute to
 						your team, feel free to reach out!
 					</p>
+					<div>
+						<NavLink href="#stack" label="See what I work with" />
+						<NavLink
+							href="#projects"
+							label="Check out my recent projects"
+						/>
+						<NavLink href="#contact" label="Contact me!" />
+					</div>
 				</CorneredRectangle>
-			</div>
+			</SectionContent>
 		</Section>
 	);
 };

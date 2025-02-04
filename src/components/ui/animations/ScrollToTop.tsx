@@ -49,7 +49,7 @@ const ScrollToTopButton = () => {
 
 	return (
 		<motion.button
-			className="fixed bottom-6 right-6 md:right-14 lg:right-[70px] bg-background border p-3 rounded-full shadow-lg hover:bg-gray-200 transition-all z-50"
+			className="fixed bottom-6 right-6 md:right-14 smallDesktop:right-[52px] lg:right-[74px] bg-background border p-3 rounded-full shadow-lg hover:bg-gray-200 transition-all z-50"
 			onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
 			initial={{ opacity: 0, scale: 0 }}
 			animate={{ opacity: show ? 1 : 0, scale: show ? 1 : 0 }}

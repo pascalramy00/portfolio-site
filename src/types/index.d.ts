@@ -5,11 +5,11 @@ export type IconType = ForwardRefExoticComponent<
 export type NavLink = {
 	label: string;
 	href: string;
-	Icon: IconType;
+	Icon?: IconType;
 };
 
 export type NavLinkProps = NavLink & {
-	isActive: boolean;
+	isActive?: boolean;
 };
 
 export type Project = {
@@ -19,3 +19,12 @@ export type Project = {
 	shortDescription: string;
 	stack: string[];
 };
+
+export type Technology = {
+	name: string;
+	url: string;
+	Icon: IconType;
+	description: string;
+};
+
+export type Stack = Technology[];

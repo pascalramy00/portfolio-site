@@ -22,7 +22,7 @@ const NavLink = ({ label, href, Icon, isActive }: NavLinkProps) => {
 			className={`px-4 pl-0 ${isActive ? "font-bold" : ""}`}
 		>
 			<div className="flex items-center gap-2">
-				<Icon className="w-5 h-5" />
+				{Icon && <Icon className="w-5 h-5" />}
 				{label}
 			</div>
 		</Link>

@@ -44,7 +44,7 @@ const HeroArtwork = () => {
 					className="hidden dark:block absolute top-[16%] right-[12%] p-4 md:p-6 rounded-full lg:top-[16%] lg:right-[12%] lg:p-8 z-20 2xl:p-10"
 					aria-label="Toggle Lamp Light"
 				></button>
-				<Tooltip className="hidden dark:block opacity-0 group-hover:opacity-100 absolute top-[12%] right-[12%]">
+				<Tooltip className="hidden dark:md:block opacity-0 group-hover:opacity-100 absolute top-[12%] right-[12%]">
 					Click me
 				</Tooltip>
 			</div>
@@ -55,7 +55,7 @@ const HeroArtwork = () => {
 					className="hidden dark:block absolute px-12 py-8 left-[14%] top-[26%] md:px-16 md:py-11 md:left-[16%] lg:top-[26%] lg:left-[16%] lg:px-24 lg:py-16 2xl:py-20 2xl:px-28 2xl:left-[17%] z-20"
 					aria-label="Toggle Monitor Light"
 				></button>
-				<Tooltip className="hidden dark:block opacity-0 group-hover:opacity-100 absolute top-[28%] left-[18%]">
+				<Tooltip className="hidden dark:md:block opacity-0 group-hover:opacity-100 absolute top-[28%] left-[18%]">
 					Click me
 				</Tooltip>
 			</div>
