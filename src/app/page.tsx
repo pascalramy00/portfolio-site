@@ -6,6 +6,7 @@ import Projects from "@/components/ui/sections/Projects";
 
 import ChevronAnimation from "@/components/ui/animations/ChevronAnimation";
 import ScrollToTop from "@/components/ui/animations/ScrollToTop";
+import ScrollProgressBar from "@/components/ui/animations/ScrollProgressBar";
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 			<Contact />
 			<ChevronAnimation className="absolute bottom-0 left-[46%] lg:left-[50%]" />
 			<ScrollToTop />
+			<ScrollProgressBar />
 			<div className="hidden lg:block lg:w-1/6"></div>
 		</main>
 	);

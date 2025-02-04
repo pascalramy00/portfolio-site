@@ -54,14 +54,6 @@ const ContactForm = () => {
 
 	return (
 		<div className="relative">
-			{/* {true && (
-				<motion.div
-					className="absolute inset-0 bg-gray-100 flex items-center justify-center rounded-2xl"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-				/>
-			)} */}
 			{status && (
 				<motion.div
 					initial={{ scale: 0, opacity: 0 }}
