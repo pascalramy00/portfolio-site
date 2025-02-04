@@ -16,6 +16,16 @@ export default {
 			screens: {
 				smallDesktop: { min: "1024px", max: "1270px" },
 			},
+			animation: {
+				sway: "sway 3s ease-in-out infinite",
+			},
+			keyframes: {
+				sway: {
+					"0%": { transform: "rotate(2deg)" },
+					"50%": { transform: "rotate(-2deg)" },
+					"100%": { transform: "rotate(2deg)" },
+				},
+			},
 		},
 	},
 	plugins: [],

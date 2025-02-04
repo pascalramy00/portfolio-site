@@ -4,15 +4,17 @@ import {
 	CodeBracketIcon,
 	CircleStackIcon,
 	EnvelopeIcon,
+	UserIcon,
 } from "@heroicons/react/24/solid";
 
 export const navLinks: NavLinkType[] = [
 	{
 		label: "Home",
-		href: "/",
+		href: "#home",
 		Icon: HomeIcon,
 	},
-	{ label: "Projects", href: "/projects", Icon: CodeBracketIcon },
-	{ label: "Stack", href: "/stack", Icon: CircleStackIcon },
-	{ label: "Contact", href: "/contact", Icon: EnvelopeIcon },
+	{ label: "About", href: "#about", Icon: UserIcon },
+	{ label: "Stack", href: "#stack", Icon: CircleStackIcon },
+	{ label: "Projects", href: "#projects", Icon: CodeBracketIcon },
+	{ label: "Contact", href: "#contact", Icon: EnvelopeIcon },
 ];

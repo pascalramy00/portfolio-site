@@ -49,7 +49,7 @@ const ThemeSwitch = () => {
 				src={lightbulbSrc}
 				alt="lightbulb"
 				fill
-				className="object-contain"
+				className="object-contain animate-sway transform origin-top"
 			/>
 		</div>
 	);

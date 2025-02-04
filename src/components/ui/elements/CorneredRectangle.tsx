@@ -14,7 +14,7 @@ const CorneredRectangle: React.FC<CorneredRectangleProps> = ({
 	children,
 }) => {
 	return (
-		<div className="relative h-full p-6 border-none">
+		<div className="relative h-full p-6 border-none z-10">
 			{/* Corners */}
 			<div
 				className={`${className} absolute top-0 left-0 ${cornerSize} border-t-2 border-l-2 ${borderColor}`}

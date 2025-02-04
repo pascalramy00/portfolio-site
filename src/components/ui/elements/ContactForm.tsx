@@ -12,7 +12,9 @@ const ContactForm = () => {
 		company: "",
 	});
 
-	const [status, setStatus] = useState<"success" | "error" | "">("");
+	const [status, setStatus] = useState<"success" | "error" | "pending" | "">(
+		""
+	);
 
 	const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to hold the timer ID
 	if (timeoutRef.current) {
@@ -30,7 +32,7 @@ const ContactForm = () => {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		setStatus("");
+		setStatus("pending");
 
 		const response = await fetch("/api/contact", {
 			method: "POST",
@@ -52,42 +54,61 @@ const ContactForm = () => {
 
 	return (
 		<div className="relative">
-			<h2 className="text-2xl font-semibold mb-2">
-				Want to work together?
-				<br />
-				Reach out.
-			</h2>
-			<div className="flex items-center justify-start">
-				<span className="inline-block w-2 h-2 mr-2 bg-green-500 rounded-full"></span>
-				<h3>available for work and projects</h3>
-			</div>
-			{status && (
+			{/* {true && (
 				<motion.div
-					className="absolute inset-0 bg-black bg-opacity-10 flex items-center justify-center"
+					className="absolute inset-0 bg-gray-100 flex items-center justify-center rounded-2xl"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 				/>
-			)}
+			)} */}
 			{status && (
 				<motion.div
 					initial={{ scale: 0, opacity: 0 }}
 					animate={{ scale: 1, opacity: 1 }}
 					exit={{ scale: 0, opacity: 0 }}
 					transition={{ duration: 0.3, ease: "easeOut" }}
-					className={`z-30 absolute top-[20%] left-[30%] -translate-x-1/2 -translate-y-1/2 
-                    p-4 rounded-2xl flex items-center justify-center gap-3 shadow-xl text-white 
-                    ${status === "success" ? "bg-green-500" : "bg-red-500"}`}
+					className={`z-30 absolute top-[-18%] right-0 -translate-x-1/2 -translate-y-1/2 
+                    p-4 w-48 rounded-2xl flex items-center justify-center gap-3 shadow-xl text-white 
+                    ${
+						status === "success"
+							? "bg-green-500"
+							: status === "pending"
+							? "bg-blue-500"
+							: "bg-red-500"
+					}`}
 				>
 					{status === "success" ? (
 						<CheckCircleIcon className="w-8 h-8" />
-					) : (
+					) : status === "error" ? (
 						<XCircleIcon className="w-8 h-8" />
+					) : (
+						<svg
+							className="w-6 h-6 animate-spin"
+							viewBox="0 0 24 24"
+						>
+							<circle
+								className="opacity-25"
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="white"
+								strokeWidth="4"
+								fill="none"
+							></circle>
+							<path
+								className="opacity-75"
+								fill="white"
+								d="M4 12a8 8 0 018-8v4l-4-4m0 16a8 8 0 008-8h-4l4 4"
+							></path>
+						</svg>
 					)}
 					<p className="text-lg">
 						{status === "success"
 							? "Sent!"
-							: "Failed to send message."}
+							: status === "error"
+							? "Failed to send."
+							: "Sending"}
 					</p>
 				</motion.div>
 			)}

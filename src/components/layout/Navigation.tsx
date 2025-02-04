@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import NavLink from "../ui/NavLink";
+import NavLink from "../ui/elements/NavLink";
 import { navLinks } from "@/data/navLinks";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
-import DarkModeToggle from "../ui/ThemeSwitch";
+import DarkModeToggle from "../ui/elements/ThemeSwitch";
 
 const MainNavigation = () => {
 	const pathname = usePathname();
@@ -33,12 +34,10 @@ const MainNavigation = () => {
 					{/* Mobile Hamburger Button */}
 					<button
 						onClick={toggleMenu}
-						className="lg:hidden p-2 focus:outline-none"
+						className="lg:hidden px-2 md:px-0 focus:outline-none"
 						aria-label="Toggle Navigation"
 					>
-						<span className="block w-6 h-0.5 bg-foreground mb-1"></span>
-						<span className="block w-6 h-0.5 bg-foreground mb-1"></span>
-						<span className="block w-6 h-0.5 bg-foreground "></span>
+						<Bars3Icon className="w-6 h-6" />
 					</button>
 
 					{/* Desktop Menu */}
@@ -64,9 +63,8 @@ const MainNavigation = () => {
 				</div>
 
 				{/* Mobile Menu */}
-				{/* <div className="absolute top-[78px] lg:hidden w-full bg-background"> */}
 				<div
-					className={`absolute top-[78px] lg:hidden w-full bg-background shadow-lg transition-transform duration-300 ${
+					className={`absolute top-[60px] rounded lg:hidden bg-background shadow-lg transition-transform duration-300 ${
 						isMenuOpen
 							? "translate-y-0 opacity-100"
 							: "-translate-y-full opacity-0"
@@ -75,7 +73,7 @@ const MainNavigation = () => {
 					<ul
 						className={`${
 							isMenuOpen ? "block" : "hidden"
-						}  py-4 px-6 md:px-20 shadow-lg lg:hidden`}
+						}  pt-2 px-6 md:px-20 shadow-lg lg:hidden`}
 					>
 						{navLinks.map(({ label, href, Icon }) => (
 							<li key={href} onClick={closeMenu}>
