@@ -13,10 +13,11 @@ const About = () => {
 					{/* <p>I&apos;m a hard worker. </p> */}
 
 					<p>
-						I am a dedicated full-stack developer with strong
-						practical knowledge in modern web technologies such as
-						[insert relevant technologies here]. I earned a Computer
-						Science degree from McGill University, where I honed my
+						Security, Performmance, Aesthetic, Responsiveness I am a
+						dedicated full-stack developer with strong practical
+						knowledge in modern web technologies such as [insert
+						relevant technologies here]. I earned a Computer Science
+						degree from McGill University, where I honed my
 						discipline, focus, and competitive spirit. With years of
 						experience in the service industry while studying, I’ve
 						become a dynamic, service-oriented individual with

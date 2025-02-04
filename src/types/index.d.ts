@@ -12,14 +12,6 @@ export type NavLinkProps = NavLink & {
 	isActive?: boolean;
 };
 
-export type Project = {
-	title: string;
-	url: string;
-	date: Date;
-	shortDescription: string;
-	stack: string[];
-};
-
 export type Technology = {
 	name: string;
 	url: string;
@@ -28,3 +20,14 @@ export type Technology = {
 };
 
 export type Stack = Technology[];
+
+export type Project = {
+	title: string;
+	description: string;
+	story: string;
+	features?: string[];
+	url: string;
+	videoUri: string;
+	stack: Stack;
+	date: Date;
+};

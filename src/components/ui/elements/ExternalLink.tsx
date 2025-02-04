@@ -1,9 +1,19 @@
 import Link from "next/link";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 
-const ExternalLink = ({ href, label }: { href: string; label: string }) => {
+const ExternalLink = ({
+	href,
+	label,
+	className,
+}: {
+	href: string;
+	label: string;
+	className?: string;
+}) => {
 	return (
-		<div className="bg-gray-200 dark:bg-gray-400 rounded py-1 px-2 my-2 mr-2 inline-block">
+		<div
+			className={`${className} bg-gray-200 dark:bg-gray-400 rounded py-1 px-2 my-2 mr-2 inline-block`}
+		>
 			<Link
 				href={href}
 				target="_blank"
