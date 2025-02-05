@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://pascalramy.com"),
 	title: "Portfolio | Pascal Ramy",
 	description: "Creative full-stack developer portfolio showcasing projects.",
 	openGraph: {
