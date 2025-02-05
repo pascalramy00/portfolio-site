@@ -3,9 +3,8 @@ import Contact from "@/components/ui/sections/Contact";
 import About from "@/components/ui/sections/About";
 import Stack from "@/components/ui/sections/Stack";
 import Projects from "@/components/ui/sections/Projects";
-
 import ChevronAnimation from "@/components/ui/animations/ChevronAnimation";
-import ScrollToTop from "@/components/ui/animations/ScrollToTop";
+import ScrollToTop2 from "@/components/ui/animations/ScrollToTop2";
 import ScrollProgressBar from "@/components/ui/animations/ScrollProgressBar";
 
 export default function Home() {
@@ -17,7 +16,7 @@ export default function Home() {
 			<Projects />
 			<Contact />
 			<ChevronAnimation className="absolute bottom-0 left-[46%] lg:left-[50%]" />
-			<ScrollToTop />
+			<ScrollToTop2 />
 			<ScrollProgressBar />
 			<div className="hidden lg:block lg:w-1/6"></div>
 		</main>

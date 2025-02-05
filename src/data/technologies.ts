@@ -27,6 +27,7 @@ import {
 	SiPostman,
 	SiPagespeedinsights,
 	SiSpeedtest,
+	SiGit,
 } from "react-icons/si";
 import { AiOutlineTranslation } from "react-icons/ai";
 import { VscAzure, VscVscodeInsiders } from "react-icons/vsc";
@@ -183,6 +184,13 @@ export const GTmetrix = {
 	url: "https://gtmetrix.com/",
 	description: "Website speed testing",
 	Icon: SiSpeedtest,
+};
+
+export const Git = {
+	name: "Git",
+	url: "https://git-scm.com/",
+	description: "Version control system",
+	Icon: SiGit,
 };
 
 export const GitHub = {

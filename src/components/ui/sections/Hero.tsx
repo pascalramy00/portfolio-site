@@ -8,7 +8,7 @@ const Hero = () => {
 	return (
 		<Section
 			id="home"
-			className="flex flex-col-reverse justify-center items-center lg:flex-row lg:items-end lg:justify-start"
+			className="flex flex-col-reverse justify-center items-center  lg:flex-row lg:pt-20 lg:items-end lg:justify-start"
 		>
 			<div className="">
 				<h1 className="text-4xl 2xl:text-6xl mb-2 md:mb-14 2xl:mb-20">

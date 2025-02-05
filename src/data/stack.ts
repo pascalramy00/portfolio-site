@@ -31,6 +31,7 @@ import {
 	WooCommerce,
 	WPML,
 	RankMath,
+	Git,
 } from "./technologies";
 
 export const stack: Stack = [
@@ -56,6 +57,7 @@ export const stack: Stack = [
 	Cloudflare,
 	PageSpeedInsights,
 	GTmetrix,
+	Git,
 	GitHub,
 	VSCode,
 	ESLint,
