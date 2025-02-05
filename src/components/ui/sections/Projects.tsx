@@ -10,7 +10,7 @@ const Projects = () => {
 		<Section id="projects">
 			<SectionTitle>Recent Projects</SectionTitle>
 			<SectionContent>
-				<ul className="w-full md:flex md:justify-between smallDesktop:block lg:block">
+				<ul className="w-full md:flex md:justify-between smallDesktop:flex smallDesktop:justify-between lg:block">
 					{projects.map((project, i) => (
 						<Project key={i} project={project} />
 					))}

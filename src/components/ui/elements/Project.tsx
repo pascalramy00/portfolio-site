@@ -20,14 +20,14 @@ const Project = ({
 	project: Project;
 }) => {
 	return (
-		<li className="flex flex-col md:w-[48%] smallDesktop:w-full lg:w-full lg:flex-row  mt-10">
+		<li className="flex flex-col md:w-[48%] smallDesktop:w-[48%] smallDesktop:flex-col lg:w-full lg:flex-row  mt-10">
 			{/* Left Column: Video */}
-			<div className="w-full smallDesktop:w-1/2 lg:w-1/2 flex-shrink-0">
+			<div className="w-full smallDesktop:w-full lg:w-1/2 flex-shrink-0">
 				{videoUri && <VideoPreview src={videoUri} />}
 			</div>
 
 			{/* Right Column: Info */}
-			<div className="w-full smallDesktop:w-1/2 lg:w-1/2 flex flex-col justify-between px-0 mt-2 lg:mt-0 lg:px-10">
+			<div className="w-full smallDesktop:w-full lg:w-1/2 flex flex-col justify-between px-0 smallDesktop:px-0 smallDesktop:mt-2 smallDesktop:justify-between mt-2 lg:mt-0 lg:px-10">
 				{/* Top Row */}
 				<div>
 					<div className="flex items-baseline gap-4 mb-1">
