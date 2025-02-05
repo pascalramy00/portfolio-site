@@ -12,7 +12,7 @@ const ExternalLink = ({
 }) => {
 	return (
 		<div
-			className={`${className} bg-gray-200 dark:bg-gray-400 rounded py-1 px-2 my-2 mr-2 inline-block`}
+			className={`${className} bg-gray-200 text-black rounded py-1 px-2 my-2 mr-2 inline-block`}
 		>
 			<Link
 				href={href}

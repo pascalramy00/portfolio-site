@@ -16,19 +16,42 @@ export default function VideoPreview({ src }: { src: string }) {
 	}, []);
 
 	useEffect(() => {
-		if (isVisible && videoRef.current) {
-			videoRef.current.play();
+		if (!videoRef.current) return;
+
+		const video = videoRef.current;
+
+		const playVideo = () => {
+			const playPromise = video.play();
+			if (playPromise !== undefined) {
+				playPromise.catch(() => {
+					console.log("Autoplay blocked, trying workaround...");
+					// Try playing again after a user interaction
+					document.body.addEventListener(
+						"click",
+						() => video.play(),
+						{ once: true }
+					);
+				});
+			}
+		};
+
+		// Play when visible
+		if (isVisible) {
+			playVideo();
 		}
 	}, [isVisible]);
 
 	return (
-		<video
-			ref={videoRef}
-			src={src}
-			loop
-			muted
-			playsInline
-			className="rounded-lg w-full h-auto"
-		/>
+		<>
+			<video
+				ref={videoRef}
+				src={src}
+				loop
+				muted
+				preload="auto"
+				playsInline
+				className="rounded-lg w-full h-auto"
+			/>
+		</>
 	);
 }

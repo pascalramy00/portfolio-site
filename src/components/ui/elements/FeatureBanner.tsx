@@ -1,10 +1,17 @@
 const FeatureBanner = ({ features }: { features: string[] }) => {
 	return (
-		<div className="relative overflow-hidden w-full h-10">
-			<div className="flex min-w-full whitespace-nowrap animate-marquee">
-				{/* Two copies of the list for smooth looping */}
-				{[...features, ...features].map((feature, index) => (
-					<span key={index} className="mr-8 font-semibold">
+		<div className="relative flex overflow-x-hidden">
+			{/* Two copies of the list for smooth looping */}
+			<div className="animate-marquee whitespace-nowrap">
+				{features.map((feature, index) => (
+					<span key={index} className="mx-4 font-semibold">
+						{feature}
+					</span>
+				))}
+			</div>
+			<div className="absolute top-0 animate-marquee2 whitespace-nowrap">
+				{features.map((feature, index) => (
+					<span key={index} className="mx-4 font-semibold">
 						{feature}
 					</span>
 				))}

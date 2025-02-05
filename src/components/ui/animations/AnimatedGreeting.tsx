@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const words = ["Hi there,", "Bonjour", "Cześć", "Hola", "مرحباً"];
+const words = ["Hi there", "Bonjour", "مرحباً", "Cześć", "Hola"];
 
 const AnimatedGreeting = () => {
 	const [index, setIndex] = useState(0);
@@ -11,7 +11,7 @@ const AnimatedGreeting = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setIndex((prev) => (prev + 1) % words.length);
-		}, 3000);
+		}, 2500);
 
 		return () => clearInterval(interval);
 	}, []);
