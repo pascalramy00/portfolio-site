@@ -8,7 +8,7 @@ import Link from "next/link";
 const Stack = () => {
 	return (
 		<Section id="stack">
-			<SectionTitle>What I Use</SectionTitle>
+			<SectionTitle title="What I Use"></SectionTitle>
 			<SectionContent>
 				<ul className="grid gap-6 sm:grid-cols-2 smallDesktop:grid-cols-2 lg:grid-cols-3">
 					{stack.map(({ name, url, Icon, description }, i) => {

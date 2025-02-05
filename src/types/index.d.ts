@@ -10,6 +10,7 @@ export type NavLink = {
 
 export type NavLinkProps = NavLink & {
 	isActive?: boolean;
+	className?: string;
 };
 
 export type Technology = {

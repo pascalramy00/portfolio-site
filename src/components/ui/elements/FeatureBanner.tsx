@@ -1,6 +1,12 @@
-const FeatureBanner = ({ features }: { features: string[] }) => {
+const FeatureBanner = ({
+	features,
+	className,
+}: {
+	features: string[];
+	className?: string;
+}) => {
 	return (
-		<div className="relative flex overflow-x-hidden">
+		<div className={`${className} relative flex overflow-x-hidden`}>
 			{/* Two copies of the list for smooth looping */}
 			<div className="animate-marquee whitespace-nowrap">
 				{features.map((feature, index) => (

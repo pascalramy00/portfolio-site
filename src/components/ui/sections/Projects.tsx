@@ -8,7 +8,7 @@ import Project from "@/components/ui/elements/Project";
 const Projects = () => {
 	return (
 		<Section id="projects">
-			<SectionTitle>Recent Projects</SectionTitle>
+			<SectionTitle title="Recent Projects"></SectionTitle>
 			<SectionContent>
 				<ul className="w-full md:flex md:justify-between smallDesktop:flex smallDesktop:justify-between lg:block">
 					{projects.map((project, i) => (

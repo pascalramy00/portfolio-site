@@ -9,7 +9,7 @@ import ScrollProgressBar from "@/components/ui/animations/ScrollProgressBar";
 
 export default function Home() {
 	return (
-		<main className="p-4 md:p-20 md:pt-0 flex-col overflow-x-hidden">
+		<main className="p-4 pb-10 md:px-20 md:py-0 overflow-x-hidden">
 			<Hero />
 			<About />
 			<Stack />

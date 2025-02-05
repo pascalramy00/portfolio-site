@@ -52,7 +52,7 @@ const MainNavigation = () => {
 									label={label}
 									href={href}
 									Icon={Icon}
-									isActive={isActive(href)}
+									className="px-4 pl-0 flex items-center gap-2"
 									aria-current={
 										isActive(href) ? "page" : undefined
 									}
@@ -81,7 +81,7 @@ const MainNavigation = () => {
 									label={label}
 									href={href}
 									Icon={Icon}
-									isActive={pathname == href}
+									className="px-4 pl-0 flex items-center gap-2"
 									aria-current={
 										isActive(href) ? "page" : undefined
 									}
