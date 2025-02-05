@@ -40,8 +40,6 @@ const About = () => {
 				/>
 			</SectionTitle>
 			<SectionContent className="min-h-full flex-grow flex flex-col justify-between">
-				{/* <p>I&apos;m a hard worker. </p> */}
-
 				<ReactMarkdown
 					className="prose"
 					components={{

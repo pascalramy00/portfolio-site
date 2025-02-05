@@ -2,18 +2,23 @@
 
 import { NavLinkProps } from "@/types";
 import Link from "next/link";
-
-const scrollToSection = (id: string) => {
-	const section = document.getElementById(id);
-	if (section) {
-		section.scrollIntoView({ behavior: "smooth", block: "start" });
-	}
-};
+import { useRouter } from "next/navigation";
 
 const NavLink = ({ label, href, Icon, className }: NavLinkProps) => {
-	const handleClick = (e: React.MouseEvent) => {
-		e.preventDefault(); // Prevent default anchor behavior
-		scrollToSection(href.substring(1)); // Remove "#" and scroll
+	const router = useRouter();
+
+	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		// If it's a section link (e.g., #about)
+		if (href.startsWith("#")) {
+			e.preventDefault();
+
+			const section = document.querySelector(href);
+			if (section) {
+				section.scrollIntoView({ behavior: "smooth" });
+			} else {
+				router.push("/"); // Redirect to homepage if section isn't found
+			}
+		}
 	};
 	return (
 		<Link href={href} onClick={handleClick} className={className}>
