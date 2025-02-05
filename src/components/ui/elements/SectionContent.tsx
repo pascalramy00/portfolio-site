@@ -1,4 +1,17 @@
+"use client";
+import { motion } from "framer-motion";
+
 const SectionContent = ({ children }: { children: React.ReactNode }) => {
-	return <div className="w-full lg:w-5/6">{children}</div>;
+	return (
+		<motion.div
+			initial={{ y: 75, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1 }}
+			transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+			viewport={{ once: true, amount: 0 }} // Adjust amount to control when it triggers
+			className="w-full lg:w-5/6"
+		>
+			{children}
+		</motion.div>
+	);
 };
 export default SectionContent;

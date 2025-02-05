@@ -10,7 +10,7 @@ const Section = ({
 	return (
 		<section
 			id={id}
-			className={`${className} min-h-screen lg:py-20 w-full lg:w-[94%]`}
+			className={`${className} min-h-screen py-10 lg:py-20 w-full lg:w-[94%]`}
 		>
 			{children}
 		</section>

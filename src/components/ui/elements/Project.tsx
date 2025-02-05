@@ -20,7 +20,7 @@ const Project = ({
 	project: Project;
 }) => {
 	return (
-		<li className="flex flex-col md:w-[48%] smallDesktop:w-[48%] smallDesktop:flex-col lg:w-full lg:flex-row  mt-10">
+		<li className="flex flex-col md:w-[48%] smallDesktop:w-[48%] smallDesktop:flex-col lg:w-full lg:flex-row mt-10 mb-16">
 			{/* Left Column: Video */}
 			<div className="w-full smallDesktop:w-full lg:w-1/2 flex-shrink-0">
 				{videoUri && <VideoPreview src={videoUri} />}
