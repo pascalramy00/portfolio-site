@@ -17,7 +17,7 @@ const AboutSectionLinks = () => {
 
 			<NavLink
 				href="#projects"
-				label="Checkout my recent projects"
+				label="Check out my recent projects"
 				Icon={ArrowDownIcon}
 				className={classes}
 			/>

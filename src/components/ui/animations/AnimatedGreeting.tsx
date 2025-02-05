@@ -24,7 +24,7 @@ const AnimatedGreeting = () => {
 				exit={{ rotateX: -90, opacity: 0 }}
 				transition={{ duration: 0.5, ease: "easeInOut" }}
 				className={`inline-block w-full h-[3rem] ${
-					index === 4 && "text-5xl"
+					index === 2 && "text-5xl"
 				}`}
 			>
 				{words[index]}
