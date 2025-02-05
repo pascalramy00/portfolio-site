@@ -25,7 +25,7 @@ const HeroArtwork = () => {
 		return "/artwork_light.png";
 	}, [mounted, theme, lamp, monitor]);
 
-	if (!mounted) return <p>Loading...</p>;
+	if (!mounted) return <div></div>;
 
 	return (
 		<div className="relative z-30">
@@ -34,6 +34,7 @@ const HeroArtwork = () => {
 					src={imageSrc}
 					alt="artwork of myself"
 					fill
+					sizes="(max-width: 768px) 100vw, 50vw"
 					className="relative object-contain"
 					priority
 				/>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
 	CheckCircleIcon,
 	XCircleIcon,
@@ -20,9 +20,20 @@ const ContactForm = () => {
 	);
 
 	const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to hold the timer ID
-	if (timeoutRef.current) {
-		clearTimeout(timeoutRef.current);
-	}
+
+	useEffect(() => {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current);
+		}
+		timeoutRef.current = setTimeout(() => {
+			if (status === "pending") return;
+			setStatus("");
+		}, 3000);
+
+		return () => {
+			if (timeoutRef.current) clearTimeout(timeoutRef.current);
+		};
+	}, [status]);
 
 	const inputClasses =
 		"peer border border-gray-400 py-4 px-5 rounded-2xl w-full z-20 bg-transparent";
@@ -37,24 +48,22 @@ const ContactForm = () => {
 		e.preventDefault();
 		setStatus("pending");
 
-		const response = await fetch("/api/contact", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(formData),
-		});
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			});
 
-		if (response.ok) {
+			if (!response.ok) throw new Error("Failed to send message");
+
 			setStatus("success");
 			setFormData({ name: "", email: "", message: "", company: "" });
-		} else {
+		} catch (e) {
 			setStatus("error");
+			console.log(e);
 		}
 	};
-
-	timeoutRef.current = setTimeout(() => {
-		if (status === "pending") return;
-		setStatus("");
-	}, 3000);
 
 	return (
 		<div className="relative">
@@ -62,12 +71,14 @@ const ContactForm = () => {
 				<div className="relative flex my-2">
 					<input
 						type="text"
+						id="name"
 						name="name"
 						required
 						onChange={handleChange}
 						value={formData.name}
 						placeholder=" "
 						className={inputClasses}
+						autoComplete="name"
 					/>
 					<label
 						htmlFor="name"
@@ -84,12 +95,14 @@ const ContactForm = () => {
 				</div>
 				<div className="relative flex my-2">
 					<input
+						id="company"
 						type="text"
 						name="company"
 						onChange={handleChange}
 						value={formData.company}
 						placeholder=" "
 						className={inputClasses}
+						autoComplete="company"
 					/>
 					<label
 						htmlFor="company"
@@ -106,12 +119,15 @@ const ContactForm = () => {
 				</div>
 				<div className="relative flex my-2">
 					<input
+						id="email"
 						type="email"
 						name="email"
 						required
+						placeholder=" "
 						onChange={handleChange}
 						value={formData.email}
 						className={inputClasses}
+						autoComplete="email"
 					/>
 					<label
 						htmlFor="email"
@@ -129,6 +145,7 @@ const ContactForm = () => {
 
 				<div className="relative flex my-2">
 					<textarea
+						id="message"
 						name="message"
 						required
 						onChange={handleChange}
@@ -150,6 +167,7 @@ const ContactForm = () => {
 				</div>
 				<button
 					type="submit"
+					aria-live="polite"
 					className={`relative border border-gray-200 dark:border-gray-600 flex items-center justify-center gap-3 mt-2 p-4 rounded-xl text-lg w-full transition-all duration-300 ease-in-out
 						${
 							status === "success"

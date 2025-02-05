@@ -10,7 +10,7 @@ const ThemeSwitch = () => {
 
 	useEffect(() => setMounted(true), []);
 
-	if (!mounted) return null;
+	if (!mounted) return <div></div>;
 
 	let switchSrc = "/artwork_light_switch_on.png";
 	let lightbulbSrc = "/artwork_lightbulb_off.png";
@@ -18,9 +18,6 @@ const ThemeSwitch = () => {
 	if (resolvedTheme === "dark") {
 		switchSrc = "/artwork_light_switch_off.png";
 		lightbulbSrc = "/artwork_lightbulb_on.png";
-	} else if (resolvedTheme === "light") {
-		switchSrc = "/artwork_light_switch_on.png";
-		lightbulbSrc = "/artwork_lightbulb_off.png";
 	}
 
 	return (
@@ -49,6 +46,7 @@ const ThemeSwitch = () => {
 				src={lightbulbSrc}
 				alt="lightbulb"
 				fill
+				sizes="(max-width: 768px) 100px, (max-width: 1024px) 150px, 200px"
 				className="object-contain animate-sway transform origin-top"
 			/>
 		</div>
