@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 		siteName: "Portfolio | Pascal Ramy",
 		images: [
 			{
-				url: "/og_image_portfolio.png",
+				url: "/images/og_image_portfolio.png",
 				width: 1200,
 				height: 630,
 			},
@@ -42,6 +42,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
+			<head>
+				<link rel="icon" href="/favicon_64x64.png" type="image/png" />
+				<link rel="icon" href="/favicon_32x32.png" type="image/png" />
+			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
 			>

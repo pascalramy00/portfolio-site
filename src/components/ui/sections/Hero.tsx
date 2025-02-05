@@ -22,7 +22,10 @@ const Hero = () => {
 						href="https://www.linkedin.com/in/pascal-ramy/"
 						label="Linkedin"
 					/>
-					<ExternalLink href="/Pascal_Ramy_CV.pdf" label="Resume" />
+					<ExternalLink
+						href="/docs/Pascal_Ramy_CV.pdf"
+						label="Resume"
+					/>
 				</div>
 				<h2 className="mb-4 2xl:text-xl">
 					Software Developer based in{" "}

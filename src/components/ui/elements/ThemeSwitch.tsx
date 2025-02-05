@@ -12,12 +12,12 @@ const ThemeSwitch = () => {
 
 	if (!mounted) return <div></div>;
 
-	let switchSrc = "/artwork_light_switch_on.png";
-	let lightbulbSrc = "/artwork_lightbulb_off.png";
+	let switchSrc = "/images/artwork_light_switch_on.png";
+	let lightbulbSrc = "/images/artwork_lightbulb_off.png";
 
 	if (resolvedTheme === "dark") {
-		switchSrc = "/artwork_light_switch_off.png";
-		lightbulbSrc = "/artwork_lightbulb_on.png";
+		switchSrc = "/images/artwork_light_switch_off.png";
+		lightbulbSrc = "/images/artwork_lightbulb_on.png";
 	}
 
 	return (
@@ -40,6 +40,7 @@ const ThemeSwitch = () => {
 					width={40}
 					height={48}
 					className=""
+					priority
 				/>
 			</button>
 			<Image
@@ -48,6 +49,7 @@ const ThemeSwitch = () => {
 				fill
 				sizes="(max-width: 768px) 100px, (max-width: 1024px) 150px, 200px"
 				className="object-contain animate-sway transform origin-top"
+				priority
 			/>
 		</div>
 	);

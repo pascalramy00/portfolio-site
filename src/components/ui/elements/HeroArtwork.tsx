@@ -15,14 +15,14 @@ const HeroArtwork = () => {
 	useEffect(() => setMounted(true), []);
 
 	const imageSrc = useMemo(() => {
-		if (!mounted) return "/artwork_light.png";
-		if (theme !== "dark") return "/artwork_light.png";
+		if (!mounted) return "/images/artwork_light.png";
+		if (theme !== "dark") return "/images/artwork_light.png";
 
-		if (!lamp && monitor) return "/artwork_monitor_on.png";
-		if (lamp && !monitor) return "/artwork_lamp_on.png";
-		if (lamp && monitor) return "/artwork_both_on.png";
+		if (!lamp && monitor) return "/images/artwork_monitor_on.png";
+		if (lamp && !monitor) return "/images/artwork_lamp_on.png";
+		if (lamp && monitor) return "/images/artwork_both_on.png";
 
-		return "/artwork_light.png";
+		return "/images/artwork_light.png";
 	}, [mounted, theme, lamp, monitor]);
 
 	if (!mounted) return <div></div>;

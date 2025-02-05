@@ -13,7 +13,7 @@ const Footer = () => {
 					<Link href="https://github.com/pascalramy00">
 						<FaGithub className="w-5 h-5" />
 					</Link>
-					<Link href="/Pascal_Ramy_CV.pdf">
+					<Link href="/docs/Pascal_Ramy_CV.pdf">
 						<IoDocumentTextOutline className="w-5 h-5" />
 					</Link>
 					<Link href="https://github.com/pascalramy00/portfolio-site">
