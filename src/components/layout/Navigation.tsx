@@ -81,7 +81,7 @@ const MainNavigation = () => {
 									label={label}
 									href={href}
 									Icon={Icon}
-									className="px-4 pl-0 flex items-center gap-2"
+									className="pr-4 pb-3 flex items-center gap-2"
 									aria-current={
 										isActive(href) ? "page" : undefined
 									}
