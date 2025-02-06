@@ -60,7 +60,7 @@ const HeroArtwork = () => {
 					Click me
 				</Tooltip>
 			</div>
-			<p className="absolute bottom-4 hidden lg:block right-2 2xl:text-xl z-30">
+			<p className="absolute bottom-1 md:bottom-2 lg:bottom-4 text-sm lg:text-base right-2 2xl:text-xl z-30">
 				Me, by{" "}
 				<Link
 					href="https://www.instagram.com/dr.peabrain/"
