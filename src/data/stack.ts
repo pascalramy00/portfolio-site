@@ -32,6 +32,7 @@ import {
 	WPML,
 	RankMath,
 	Git,
+	Figma,
 } from "./technologies";
 
 export const stack: Stack = [
@@ -41,6 +42,7 @@ export const stack: Stack = [
 	NextJS,
 	ReactJS,
 	TailwindCSS,
+	Figma,
 	FramerMotion,
 	jQuery,
 	Webpack,

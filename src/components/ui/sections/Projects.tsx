@@ -1,6 +1,6 @@
 import Section from "@/components/layout/Section";
-import SectionTitle from "../elements/SectionTitle";
-import SectionContent from "../elements/SectionContent";
+import SectionTitle from "../../layout/SectionTitle";
+import SectionContent from "../../layout/SectionContent";
 
 import { projects } from "@/data/projects";
 import Project from "@/components/ui/elements/Project";

@@ -1,6 +1,6 @@
 import Section from "@/components/layout/Section";
-import SectionTitle from "../elements/SectionTitle";
-import SectionContent from "../elements/SectionContent";
+import SectionTitle from "../../layout/SectionTitle";
+import SectionContent from "../../layout/SectionContent";
 import AboutSectionLinks from "../elements/AboutSectionLinks";
 import FeatureBanner from "../elements/FeatureBanner";
 
@@ -24,9 +24,6 @@ const About = () => {
 					<span className="mx-2">Responsiveness</span>
 					<span className="mx-2">•</span>
 					<span className="mx-2">Aesthetics</span>
-
-					{/* Reliability • Security • Performance • Responsiveness •
-					Aesthetics */}
 				</h3>
 				<FeatureBanner
 					className="block mb-4 md:hidden"

@@ -1,6 +1,6 @@
 import Section from "@/components/layout/Section";
-import SectionTitle from "@/components/ui/elements/SectionTitle";
-import SectionContent from "../elements/SectionContent";
+import SectionTitle from "@/components/layout/SectionTitle";
+import SectionContent from "../../layout/SectionContent";
 
 import { stack } from "@/data/stack";
 import Link from "next/link";

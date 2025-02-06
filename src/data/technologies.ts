@@ -28,6 +28,7 @@ import {
 	SiPagespeedinsights,
 	SiSpeedtest,
 	SiGit,
+	SiFigma,
 } from "react-icons/si";
 import { AiOutlineTranslation } from "react-icons/ai";
 import { VscAzure, VscVscodeInsiders } from "react-icons/vsc";
@@ -142,6 +143,12 @@ export const Prisma = {
 	url: "https://www.prisma.io/",
 	description: "ORM for databases",
 	Icon: SiPrisma,
+};
+export const Figma = {
+	name: "Figma",
+	url: "https://www.figma.com/",
+	description: "UI/UX design tool",
+	Icon: SiFigma,
 };
 
 export const Strapi = {
