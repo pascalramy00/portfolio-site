@@ -2,7 +2,8 @@ import AnimatedGreeting from "../animations/AnimatedGreeting";
 import ExternalLink from "../elements/ExternalLink";
 import Section from "@/components/layout/Section";
 
-import HeroArtwork from "../elements/HeroArtwork";
+// import HeroArtwork from "../elements/HeroArtwork";
+import HeroOptimizedArtwork from "../elements/HeroOptimizedArtwork";
 
 const Hero = () => {
 	return (
@@ -29,10 +30,10 @@ const Hero = () => {
 				</div>
 				<h2 className="mb-4 2xl:text-xl">
 					Software Developer based in{" "}
-					<span className="font-semibold">Montreal, Canada</span>
+					<strong className="font-semibold">Montreal, Canada</strong>
 				</h2>
 			</div>
-			<HeroArtwork />
+			<HeroOptimizedArtwork />
 		</Section>
 	);
 };
