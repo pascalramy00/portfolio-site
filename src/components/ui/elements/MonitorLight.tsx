@@ -6,71 +6,95 @@ export const MonitorLight = ({
 	theme: string;
 }) => {
 	return (
-		<svg
-			width='100%'
-			height='100%'
-			viewBox='0 0 100 60'
-			className={`${
-				isOn && theme === 'dark' ? 'block' : 'hidden'
-			} absolute z-1`}
-		>
-			<defs>
-				<filter
-					id='monitorIntenseFilter'
-					x='-50%'
-					y='-50%'
-					width='220%'
-					height='220%'
-				>
-					<feGaussianBlur in='SourceGraphic' stdDeviation='2' />
-				</filter>
-				<linearGradient
-					id='lighting-gradient-monitor'
-					x1='0%'
-					y1='50%'
-					x2='100%'
-					y2='50%'
-				>
-					<stop offset='0%' stopColor='#ABEAEC' opacity='1' />
-					<stop offset='80%' stopColor='#ABEAEC' opacity='0.7' />
-					<stop offset='100%' stopColor='transparent' opacity='0' />
-				</linearGradient>
+		<>
+			<svg
+				width='100%'
+				height='100%'
+				viewBox='0 0 100 60'
+				className='absolute z-20 pointer-events-none'
+				transform='rotate()'
+			>
+				<polygon points='30,17 40,15.5 41,34.5 30,33' fill='#0a0a0a' />
+			</svg>
 
-				<linearGradient
-					id='white-gradient-monitor'
-					x1='0%'
-					y1='50%'
-					x2='100%'
-					y2='50%'
-				>
-					<stop offset='0%' stopColor='white' />
-					<stop offset='10%' stopColor='transparent' />
+			<svg
+				width='100%'
+				height='100%'
+				viewBox='0 0 100 60'
+				className={`${
+					isOn && theme === 'dark' ? 'block' : 'hidden'
+				} absolute z-0 pointer-events-none`}
+			>
+				<g>
+					<polygon
+						points='34,18 41,16 42,34 31,32'
+						fill='#0a0a0a'
+						className='z-10'
+						fillOpacity='1'
+					/>
+				</g>
+				<defs>
+					<filter
+						id='monitorIntenseFilter'
+						x='-50%'
+						y='-50%'
+						width='220%'
+						height='220%'
+					>
+						<feGaussianBlur in='SourceGraphic' stdDeviation='2' />
+					</filter>
+					<linearGradient
+						id='lighting-gradient-monitor'
+						x1='0%'
+						y1='50%'
+						x2='100%'
+						y2='50%'
+					>
+						<stop offset='0%' stopColor='#ABEAEC' opacity='1' />
+						<stop offset='70%' stopColor='#ABEAEC' opacity='1' />
+						<stop
+							offset='100%'
+							stopColor='transparent'
+							opacity='1'
+						/>
+						<stop
+							offset='100%'
+							stopColor='transparent'
+							opacity='0'
+						/>
+					</linearGradient>
 
-					<stop offset='100%' stopColor='transparent' />
-				</linearGradient>
-			</defs>
+					<linearGradient
+						id='white-gradient-monitor'
+						x1='0%'
+						y1='50%'
+						x2='100%'
+						y2='50%'
+					>
+						<stop offset='0%' stopColor='white' />
+						<stop offset='10%' stopColor='transparent' />
 
-			<g filter='url(#blurFilter)'>
-				<polygon
-					points='40,15 68,8 68,42 50,41 41.5,35'
-					fill='url(#lighting-gradient-monitor)'
-					className='opacity-90'
-				/>
-			</g>
+						<stop offset='100%' stopColor='transparent' />
+					</linearGradient>
+				</defs>
 
-			<g filter='url(#blurFilter)'>
-				<polygon
-					points='40,15 40,12 36,41 41.5,34'
-					fill='url(#white-gradient-monitor)'
-				/>
-			</g>
-			<g>
-				<polygon
-					filter='url(#monitorIntenseFilter)'
-					points='40,25 43,13 45,36 41.5,30'
-					fill='white'
-				/>
-			</g>
-		</svg>
+				<g filter='url(#blurFilter)'>
+					{/* <g> */}
+					<polygon
+						points='40,17 68,8 72,20 72,35 68,42 55,41 41.5,33'
+						fill='url(#lighting-gradient-monitor)'
+						// fill='#abeaec'
+						className='opacity-90 z-10'
+					/>
+				</g>
+				<g filter='url(#monitorIntenseFilter)'>
+					<polygon
+						points='40,18 45,18 45,32 40,32'
+						fill='white'
+						className='z-10'
+					/>
+				</g>
+			</svg>
+		</>
 	);
 };

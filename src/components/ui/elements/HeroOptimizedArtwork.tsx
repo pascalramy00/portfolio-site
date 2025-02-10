@@ -21,7 +21,7 @@ const HeroOptimizedArtwork = () => {
 	if (!mounted) return <div></div>;
 
 	return (
-		<div className='relative z-30'>
+		<div className='relative'>
 			<div className='relative w-[360px] h-[212px] md:w-[500px] md:h-[295px] lg:w-[700px] lg:h-[413px] 2xl:w-[900px] 2xl:h-[531px]'>
 				<LampLight isOn={lamp} theme={currentTheme} />
 				<MonitorLight isOn={monitor} theme={currentTheme} />
@@ -30,14 +30,14 @@ const HeroOptimizedArtwork = () => {
 					alt='artwork of myself'
 					fill
 					sizes='(max-width: 768px) 100vw, 50vw'
-					className='relative object-contain'
+					className='relative object-contain z-40'
 					priority
 				/>
 			</div>
 			<div className='group'>
 				<button
 					onClick={() => setLamp((prev) => !prev)}
-					className=' absolute top-[16%] right-[12%] p-4 md:p-6 rounded-full lg:top-[16%] lg:right-[12%] lg:p-8 z-20 2xl:p-10'
+					className=' absolute top-[16%] right-[12%] p-4 md:p-6 rounded-full lg:top-[16%] lg:right-[12%] lg:p-8 z-50 2xl:p-10'
 					aria-label='Toggle Lamp Light'
 				></button>
 				<Tooltip className='hidden dark:md:block opacity-0 group-hover:opacity-100 absolute top-[12%] right-[12%]'>
@@ -48,7 +48,7 @@ const HeroOptimizedArtwork = () => {
 			<div className='group'>
 				<button
 					onClick={() => setMonitor((prev) => !prev)}
-					className='absolute px-12 py-8 left-[14%] top-[26%] md:px-16 md:py-11 md:left-[16%] lg:top-[26%] lg:left-[16%] lg:px-24 lg:py-16 2xl:py-20 2xl:px-28 2xl:left-[17%] z-20'
+					className='absolute px-12 py-8 left-[14%] top-[26%] md:px-16 md:py-11 md:left-[16%] lg:top-[26%] lg:left-[16%] lg:px-24 lg:py-16 2xl:py-20 2xl:px-28 2xl:left-[17%] z-50'
 					aria-label='Toggle Monitor Light'
 				></button>
 				<Tooltip className='hidden dark:md:block opacity-0 group-hover:opacity-100 absolute top-[28%] left-[18%]'>

@@ -17,7 +17,6 @@ const ThemeSwitch = () => {
 
 	if (resolvedTheme === 'dark') {
 		switchSrc = '/images/artwork_light_switch_off.png';
-		//lightbulbSrc = "/images/artwork_lightbulb_on.png";
 	}
 
 	return (
@@ -58,7 +57,9 @@ const ThemeSwitch = () => {
 					width='100%'
 					height='100%'
 					viewBox='0 0 200 200'
-					className='absolute bottom-0 z-[-10]'
+					className={`${
+						resolvedTheme === 'dark' ? 'block' : 'hidden'
+					} absolute bottom-0 z-[-10]`}
 				>
 					<defs>
 						<radialGradient
