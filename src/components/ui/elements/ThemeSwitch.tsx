@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const ThemeSwitch = () => {
 	const [mounted, setMounted] = useState(false);
-	const { setTheme, resolvedTheme } = useTheme();
+	const { setTheme, theme } = useTheme();
 
 	useEffect(() => setMounted(true), []);
 
@@ -15,7 +15,7 @@ const ThemeSwitch = () => {
 	let switchSrc = '/images/artwork_light_switch_on.png';
 	const lightbulbSrc = '/images/artwork_lightbulb_off.png';
 
-	if (resolvedTheme === 'dark') {
+	if (theme === 'dark') {
 		switchSrc = '/images/artwork_light_switch_off.png';
 	}
 
@@ -58,7 +58,7 @@ const ThemeSwitch = () => {
 					height='100%'
 					viewBox='0 0 200 200'
 					className={`${
-						resolvedTheme === 'dark' ? 'block' : 'hidden'
+						theme === 'dark' ? 'block' : 'hidden'
 					} absolute bottom-0 z-[-10]`}
 				>
 					<defs>
