@@ -16,7 +16,6 @@ export const MonitorLight = ({
 				height='100%'
 				viewBox='0 0 100 60'
 				className={`absolute z-10 pointer-events-none`}
-				transform='rotate()'
 			>
 				<polygon points='30,17 40,15.5 41,34.5 30,33' fill='#0a0a0a' />
 			</svg>
