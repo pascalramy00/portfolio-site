@@ -1,13 +1,11 @@
 const LampLight = ({ isOn, theme }: { isOn: boolean; theme: string }) => {
 	return (
-		<>
+		<div className={`${isOn && theme === 'dark' ? 'block' : 'hidden'}`}>
 			<svg
 				width='100%'
 				height='100%'
 				viewBox='0 0 100 60'
-				className={`${
-					theme === 'light' ? 'hidden' : 'block'
-				} absolute z-20 pointer-events-none`}
+				className={`absolute z-10 pointer-events-none`}
 			>
 				<polygon
 					points='79.5,13.5 81,12.5 85,12 87,10 88,11 86.5,14 87.5,17 86,18.5 85,18 84,17.5, 83,17'
@@ -20,7 +18,7 @@ const LampLight = ({ isOn, theme }: { isOn: boolean; theme: string }) => {
 				height='100%'
 				viewBox='0 0 100 60'
 				className={`${
-					isOn && theme === 'dark' ? 'block' : 'hidden'
+					isOn ? 'block' : 'hidden'
 				} absolute z-0 pointer-events-none`}
 			>
 				<defs>
@@ -61,7 +59,7 @@ const LampLight = ({ isOn, theme }: { isOn: boolean; theme: string }) => {
 					<polygon
 						points='44,26 76,12 90,22 80,40 70,42 45,40'
 						fill='url(#lighting-gradient)'
-						className='opacity-90 z-10'
+						className='opacity-90 z-0'
 					/>
 				</g>
 
@@ -69,18 +67,18 @@ const LampLight = ({ isOn, theme }: { isOn: boolean; theme: string }) => {
 					<polygon
 						points='60,30 80,15 85,18 70,34'
 						fill='#ffe58a'
-						className='opacity-70 z-10'
+						className='opacity-70 z-0'
 					/>
 				</g>
 				<g filter='url(#blurFilter)'>
 					<polygon
 						points='70,24 81,15.5 84,18 74,28'
 						fill='white'
-						className='opacity-100 z-10'
+						className='opacity-100 z-0'
 					/>
 				</g>
 			</svg>
-		</>
+		</div>
 	);
 };
 export default LampLight;
