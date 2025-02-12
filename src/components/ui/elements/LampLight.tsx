@@ -5,7 +5,9 @@ const LampLight = ({ isOn, theme }: { isOn: boolean; theme: string }) => {
 				width='100%'
 				height='100%'
 				viewBox='0 0 100 60'
-				className='absolute z-20 pointer-events-none'
+				className={`${
+					theme === 'light' ? 'hidden' : 'block'
+				} absolute z-20 pointer-events-none`}
 			>
 				<polygon
 					points='79.5,13.5 81,12.5 85,12 87,10 88,11 86.5,14 87.5,17 86,18.5 85,18 84,17.5, 83,17'

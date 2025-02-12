@@ -11,7 +11,9 @@ export const MonitorLight = ({
 				width='100%'
 				height='100%'
 				viewBox='0 0 100 60'
-				className='absolute z-20 pointer-events-none'
+				className={`${
+					theme === 'light' ? 'hidden' : 'block'
+				} absolute z-20 pointer-events-none`}
 				transform='rotate()'
 			>
 				<polygon points='30,17 40,15.5 41,34.5 30,33' fill='#0a0a0a' />
@@ -83,7 +85,6 @@ export const MonitorLight = ({
 					<polygon
 						points='40,17 68,8 72,20 72,35 68,42 55,41 41.5,33'
 						fill='url(#lighting-gradient-monitor)'
-						// fill='#abeaec'
 						className='opacity-90 z-10'
 					/>
 				</g>
