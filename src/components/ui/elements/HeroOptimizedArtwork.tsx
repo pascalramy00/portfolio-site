@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
@@ -9,22 +9,21 @@ import LampLight from './LampLight';
 import { MonitorLight } from './MonitorLight';
 
 const HeroOptimizedArtwork = () => {
-	const { theme } = useTheme();
+	const { resolvedTheme } = useTheme();
 	const [loaded, setLoaded] = useState(false);
 	const [lamp, setLamp] = useState(true);
 	const [monitor, setMonitor] = useState(true);
 	const [mounted, setMounted] = useState(false);
-	const imgRef = useRef<HTMLImageElement | null>(null);
 
 	useEffect(() => setMounted(true), []);
 
-	const currentTheme = theme || 'light';
+	const currentTheme = resolvedTheme || 'light';
 
 	if (!mounted) return <div></div>;
 
 	return (
 		<div
-			className={`relative  transition-opacity duration-1000 ${
+			className={`relative  transition-opacity duration-500 ${
 				loaded ? 'opacity-100' : 'opacity-0'
 			}`}
 		>
@@ -32,7 +31,6 @@ const HeroOptimizedArtwork = () => {
 				<LampLight isOn={lamp} theme={currentTheme} />
 				<MonitorLight isOn={monitor} theme={currentTheme} />
 				<Image
-					ref={imgRef}
 					src='/images/artwork_light.png'
 					alt='artwork of myself'
 					fill

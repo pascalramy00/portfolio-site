@@ -6,18 +6,18 @@ import Image from 'next/image';
 
 const ThemeSwitch = () => {
 	const [mounted, setMounted] = useState(false);
-	const { setTheme, theme } = useTheme();
+	const { setTheme, resolvedTheme } = useTheme();
 
 	useEffect(() => setMounted(true), []);
 
 	if (!mounted) return <div></div>;
 
-	let switchSrc = '/images/artwork_light_switch_on.png';
 	const lightbulbSrc = '/images/artwork_lightbulb_off.png';
 
-	if (theme === 'dark') {
-		switchSrc = '/images/artwork_light_switch_off.png';
-	}
+	const switchSrc =
+		resolvedTheme === 'dark'
+			? '/images/artwork_light_switch_off.png'
+			: '/images/artwork_light_switch_on.png';
 
 	return (
 		<div
@@ -29,7 +29,7 @@ const ThemeSwitch = () => {
 		>
 			<button
 				onClick={() =>
-					setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+					setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
 				}
 				className='absolute left-[28%] bottom-[-6px] md:left-[34%] md:bottom-2 smallDesktop:left-[36%] smallDesktop:bottom-3 lg:left-[40%] lg:bottom-8 2xl:left-[40%] 2xl:bottom-8 z-10 '
 			>
@@ -57,9 +57,11 @@ const ThemeSwitch = () => {
 					width='100%'
 					height='100%'
 					viewBox='0 0 200 200'
-					className={`${
-						theme === 'dark' ? 'block' : 'hidden'
-					} absolute bottom-0 z-[-10]`}
+					className={`absolute bottom-0 z-[-10] transition-opacity duration-500 ${
+						resolvedTheme === 'dark'
+							? 'opacity-100'
+							: 'opacity-0 pointer-events-none'
+					}`}
 				>
 					<defs>
 						<radialGradient

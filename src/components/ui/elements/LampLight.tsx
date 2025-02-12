@@ -1,6 +1,10 @@
 const LampLight = ({ isOn, theme }: { isOn: boolean; theme: string }) => {
 	return (
-		<div className={`${isOn && theme === 'dark' ? 'block' : 'hidden'}`}>
+		<div
+			className={`transition-opacity duration-500 ${
+				isOn && theme === 'dark' ? 'opacity-100' : 'opacity-0'
+			}`}
+		>
 			<svg
 				width='100%'
 				height='100%'
@@ -17,9 +21,7 @@ const LampLight = ({ isOn, theme }: { isOn: boolean; theme: string }) => {
 				width='100%'
 				height='100%'
 				viewBox='0 0 100 60'
-				className={`${
-					isOn ? 'block' : 'hidden'
-				} absolute z-0 pointer-events-none`}
+				className={`absolute z-0 pointer-events-none`}
 			>
 				<defs>
 					<filter

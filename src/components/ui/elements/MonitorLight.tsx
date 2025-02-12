@@ -6,7 +6,11 @@ export const MonitorLight = ({
 	theme: string;
 }) => {
 	return (
-		<div className={`${theme === 'dark' ? 'block' : 'hidden'}`}>
+		<div
+			className={`transition-opacity duration-500 ${
+				isOn && theme === 'dark' ? 'opacity-100' : 'opacity-0'
+			}`}
+		>
 			<svg
 				width='100%'
 				height='100%'
@@ -21,9 +25,7 @@ export const MonitorLight = ({
 				width='100%'
 				height='100%'
 				viewBox='0 0 100 60'
-				className={`${
-					isOn ? 'block' : 'hidden'
-				} absolute z-0 pointer-events-none`}
+				className={`absolute z-0 pointer-events-none`}
 			>
 				{/* <g>
 					<polygon
