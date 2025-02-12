@@ -43,8 +43,9 @@ export const MonitorLight = ({
 						width='220%'
 						height='220%'
 					>
-						<feGaussianBlur in='SourceGraphic' stdDeviation='2' />
+						<feGaussianBlur in='SourceGraphic' stdDeviation='2.5' />
 					</filter>
+
 					<linearGradient
 						id='lighting-gradient-monitor'
 						x1='0%'
@@ -80,7 +81,7 @@ export const MonitorLight = ({
 					</linearGradient>
 				</defs>
 
-				<g filter='url(#blurFilter)'>
+				<g filter='url(#monitorIntenseFilter)'>
 					{/* <g> */}
 					<polygon
 						points='40,17 68,8 72,20 72,35 68,42 55,41 41.5,33'
