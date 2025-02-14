@@ -24,7 +24,7 @@ const Hero = () => {
 						label="Linkedin"
 					/>
 					<ExternalLink
-						href="/docs/Pascal_Ramy_CV.pdf"
+						href="/docs/Pascal_Ramy_Software_Developer.pdf"
 						label="Resume"
 					/>
 				</div>
