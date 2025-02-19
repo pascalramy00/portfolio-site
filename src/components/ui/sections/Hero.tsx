@@ -1,6 +1,7 @@
 import AnimatedGreeting from "../animations/AnimatedGreeting";
 import ExternalLink from "../elements/ExternalLink";
 import Section from "@/components/layout/Section";
+import externalLinks from "@/data/externaLinks";
 
 // import HeroArtwork from "../elements/HeroArtwork";
 import HeroOptimizedArtwork from "../elements/HeroOptimizedArtwork";
@@ -18,11 +19,9 @@ const Hero = () => {
         </h1>
 
         <div className="">
-          <ExternalLink
-            href="https://www.linkedin.com/in/pascal-ramy/"
-            label="Linkedin"
-          />
-          <ExternalLink href="/docs/PRamy_CV.pdf" label="Resume" />
+          {externalLinks.map(({ label, href }) => (
+            <ExternalLink key={label} label={label} href={href} />
+          ))}
         </div>
         <h2 className="mb-4 2xl:text-xl">
           Software Developer based in{" "}
