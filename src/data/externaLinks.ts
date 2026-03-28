@@ -5,7 +5,7 @@ const externalLinks: ExternalLink[] = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/pascal-ramy/",
   },
-  { label: "Resume", href: "/docs/PRAMY_CV_2026_EN.pdf" },
+  { label: "Resume", href: "/docs/Pascal_Ramy_CV_2026.pdf" },
 ];
 
 export default externalLinks;
