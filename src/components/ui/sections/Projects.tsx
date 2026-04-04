@@ -6,17 +6,17 @@ import { projects } from "@/data/projects";
 import Project from "@/components/ui/elements/Project";
 
 const Projects = () => {
-	return (
-		<Section id="projects">
-			<SectionTitle title="Recent Projects"></SectionTitle>
-			<SectionContent>
-				<ul className="w-full md:flex md:justify-between smallDesktop:flex smallDesktop:justify-between lg:block">
-					{projects.map((project, i) => (
-						<Project key={i} project={project} />
-					))}
-				</ul>
-			</SectionContent>
-		</Section>
-	);
+  return (
+    <Section id="projects">
+      <SectionTitle title="Recent Projects"></SectionTitle>
+      <SectionContent>
+        <ul className="w-full smallDesktop:grid smallDesktop:grid-cols-2 smallDesktop:gap-8 lg:block">
+          {projects.map((project, i) => (
+            <Project key={i} project={project} />
+          ))}
+        </ul>
+      </SectionContent>
+    </Section>
+  );
 };
 export default Projects;
