@@ -30,6 +30,7 @@ import {
   SiGit,
   SiFigma,
   SiZod,
+  SiUpstash,
 } from "react-icons/si";
 import { AiOutlineTranslation } from "react-icons/ai";
 import { VscAzure, VscVscodeInsiders } from "react-icons/vsc";
@@ -68,6 +69,13 @@ export const ReactJS = {
   url: "https://react.dev/",
   description: "JavaScript library for UI",
   Icon: RiReactjsLine,
+};
+
+export const Upstash = {
+  name: "Upstash",
+  url: "https://upstash.com/",
+  description: "Serverless Redis & Kafka",
+  Icon: SiUpstash,
 };
 
 export const TailwindCSS = {

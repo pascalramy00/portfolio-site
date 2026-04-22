@@ -15,9 +15,37 @@ import {
   Prisma,
   Zod,
   PostgreSQL,
+  Upstash,
 } from "./technologies";
 
 export const projects: Project[] = [
+  {
+    title: "Shaft",
+    description: "Interactive elevator scheduling simulator",
+    story:
+      "Elevator Sim is an interactive visual simulator for exploring classic elevator scheduling algorithms  with real-time metrics, event logging, and a worldwide leaderboard powered by Upstash Redis.",
+    features: [
+      "real-time elevator simulation",
+      "5 scheduling strategies",
+      "configurable building & elevator parameters",
+      "live metrics & event log",
+      "worldwide strategy leaderboard",
+      "responsive UI",
+    ],
+    videoUri: "/videos/elevator_sim_demo.mp4",
+    stack: [
+      NextJS,
+      ReactJS,
+      TypeScript,
+      TailwindCSS,
+      FramerMotion,
+      Upstash,
+      Vercel,
+    ],
+    date: new Date("January 2026"),
+    url: "https://elevator-sim-nu.vercel.app",
+  },
+
   {
     title: "Dashly",
     description: "Story-first SaaS reporting platform",
